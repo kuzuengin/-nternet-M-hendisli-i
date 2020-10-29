@@ -4,7 +4,8 @@
     Author     : Engin KUZU - 2018123079
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,13 +58,13 @@ font-size: 13px;
     
       <form method = "POST">
           <center>
-              <table style="margin-top: 150px;">
+              <table>
                 <tr>
-                    <td colspan="3" style="text-align: center;"><label><b>ÖDEV 1 </b></label></td>
+                    <td colspan="3" style="text-align: center;"><label><b>ÖDEV 1 Scriptlet Tag </b></label></td>
                 </tr>                  
                 <tr>
                     <td><label>ADI </label></td><td>:</td>
-                  <td><input type = "text" name = "adText"></td>
+                  <td><input type = "text" name = "adText" ></td>
                 </tr>
                 <tr>
                   <td><label>SOYADI </label></td><td>:</td>
@@ -73,14 +74,15 @@ font-size: 13px;
                 <tr><td colspan="3" align="center"  ><button type="submit"/>KAYDET</button></td></tr>
                 </table>
               
-                      <% if (request.getParameter("adText") != null)
+                      <% 
+                          if (request.getParameter("adText") != null)
                       {
                           out.print("<div style=\"margin-top:50px;\" ><label class=\"sonuc\">");
                           out.println(request.getParameter("adText")); 
                           out.println(request.getParameter("soyadText")); 
                           out.print("</label></div>");
                       }
-                          %>
+                      %>
              
           </center>
       </form>

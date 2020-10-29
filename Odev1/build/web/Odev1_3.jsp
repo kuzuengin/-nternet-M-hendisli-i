@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,20 +60,21 @@ public String yaz(String s){
 if (s==null) return "";
 else return s;
 }
+String ek=" Bilgisi Girildi.";
     %>
       <form method = "POST">
           <center>
-              <table style="margin-top: 150px;">
+              <table >
                 <tr>
-                    <td colspan="3" style="text-align: center;"><label><b>ÖDEV 1 </b></label></td>
+                    <td colspan="3" style="text-align: center;"><label><b>ÖDEV 1 Declaration Tag</b></label></td>
                 </tr>                  
                 <tr>
                     <td><label>ADI </label></td><td>:</td>
-                  <td><input type = "text" name = "adText"></td>
+                  <td><input type = "text" name = "adText" value="<%=yaz(request.getParameter("adText"))%>"></td>
                 </tr>
                 <tr>
                   <td><label>SOYADI </label></td><td>:</td>
-                  <td><input type = "text" name = "soyadText"></td>
+                  <td><input type = "text" name = "soyadText" value="<%=yaz(request.getParameter("soyadText"))%>"></td>
                 </tr> 
                 <tr><td colspan="3"></td></tr>
                 <tr><td colspan="3" align="center"  ><button type="submit"/>KAYDET</button></td></tr>
@@ -80,7 +82,7 @@ else return s;
               <div style="margin-top:50px;" >
                   <label class="sonuc">
                       <%=yaz(request.getParameter("adText"))%>
-                      <%=yaz(request.getParameter("soyadText"))%>
+                      <%=yaz(request.getParameter("soyadText"))+ek%>
                     </label></div>
              
           </center>
