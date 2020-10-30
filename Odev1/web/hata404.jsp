@@ -14,5 +14,6 @@
 </head>
 <body>
     <h1>404 HATA SAYFASI</h1>
+    <h2><%= exception %></h2>
 </body>
 </html>
