@@ -22,9 +22,11 @@
                 </table><br>
                       <%
                       if (sayi>0)
+                      {
                       for (int i=0;i<=(son-ilk);i++)
                           out.print("<div><label class='sonuc'>" + sayi + " X " + (ilk+i) + " = " +(sayi *(ilk+i)) + "</label></div><br>");
                       sayi = son/ilk;  //errorPage sayfasına yönlendirme için
+                      }
                       %>
                       <%= "<div><label class='sonuc'>" + getServletInfo()+ "</label></div>" %>
                     
